@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="420" viewBox="0 0 920 420">
+  <rect width="920" height="420" fill="#ffffff"/>
+  <text x="460" y="36" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#8B7969">FashionablyLate ER Diagram</text>
+  <rect x="40" y="70" width="240" height="200" fill="#F2EDE9" stroke="#8B7969" stroke-width="2"/>
+  <text x="160" y="98" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#8B7969">users</text>
+  <text x="55" y="125" font-family="sans-serif" font-size="13" fill="#333">id (PK)</text>
+  <text x="55" y="148" font-family="sans-serif" font-size="13" fill="#333">name</text>
+  <text x="55" y="171" font-family="sans-serif" font-size="13" fill="#333">email</text>
+  <text x="55" y="194" font-family="sans-serif" font-size="13" fill="#333">password</text>
+  <text x="55" y="217" font-family="sans-serif" font-size="13" fill="#333">created_at</text>
+  <text x="55" y="240" font-family="sans-serif" font-size="13" fill="#333">updated_at</text>
+  <rect x="340" y="70" width="240" height="170" fill="#F2EDE9" stroke="#8B7969" stroke-width="2"/>
+  <text x="460" y="98" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#8B7969">categories</text>
+  <text x="355" y="125" font-family="sans-serif" font-size="13" fill="#333">id (PK)</text>
+  <text x="355" y="148" font-family="sans-serif" font-size="13" fill="#333">content</text>
+  <text x="355" y="171" font-family="sans-serif" font-size="13" fill="#333">created_at</text>
+  <text x="355" y="194" font-family="sans-serif" font-size="13" fill="#333">updated_at</text>
+  <rect x="640" y="70" width="240" height="310" fill="#F2EDE9" stroke="#8B7969" stroke-width="2"/>
+  <text x="760" y="98" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#8B7969">contacts</text>
+  <text x="655" y="125" font-family="sans-serif" font-size="13" fill="#333">id (PK)</text>
+  <text x="655" y="148" font-family="sans-serif" font-size="13" fill="#333">category_id (FK)</text>
+  <text x="655" y="171" font-family="sans-serif" font-size="13" fill="#333">first_name</text>
+  <text x="655" y="194" font-family="sans-serif" font-size="13" fill="#333">last_name</text>
+  <text x="655" y="217" font-family="sans-serif" font-size="13" fill="#333">gender</text>
+  <text x="655" y="240" font-family="sans-serif" font-size="13" fill="#333">email</text>
+  <text x="655" y="263" font-family="sans-serif" font-size="13" fill="#333">tel</text>
+  <text x="655" y="286" font-family="sans-serif" font-size="13" fill="#333">address</text>
+  <text x="655" y="309" font-family="sans-serif" font-size="13" fill="#333">building</text>
+  <text x="655" y="332" font-family="sans-serif" font-size="13" fill="#333">detail</text>
+  <text x="655" y="355" font-family="sans-serif" font-size="13" fill="#333">created_at, updated_at</text>
+  <line x1="580" y1="155" x2="640" y2="155" stroke="#8B7969" stroke-width="2"/>
+  <text x="595" y="145" font-family="sans-serif" font-size="14" fill="#8B7969">1</text>
+  <text x="625" y="145" font-family="sans-serif" font-size="14" fill="#8B7969">N</text>
+  <polygon points="640,155 630,150 630,160" fill="#8B7969"/>
+</svg>

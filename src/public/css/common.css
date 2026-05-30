@@ -6,7 +6,7 @@ body {
   margin: 0;
   font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   color: #333;
-  background: #fff;
+  background: #F2EDE9;
   line-height: 1.6;
 }
 
@@ -19,24 +19,50 @@ a:hover {
   text-decoration: underline;
 }
 
-.page-header {
-  background: #8B7969;
-  color: #fff;
-  padding: 16px 24px;
+.site-header {
+  position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  padding: 20px 24px;
+  background: #fff;
+  border-bottom: 1px solid #E0DFDE;
 }
 
-.page-header__title {
-  font-size: 1.25rem;
-  font-weight: bold;
+.site-header__logo {
   margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #8B7969;
+  letter-spacing: 0.02em;
 }
 
-.page-header__link a {
-  color: #fff;
-  font-weight: bold;
+.site-header__nav {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.site-header__link {
+  display: inline-block;
+  padding: 6px 18px;
+  border: 1px solid #8B7969;
+  color: #8B7969;
+  font-size: 0.9rem;
+  text-decoration: none;
+  background: #fff;
+}
+
+.site-header__link:hover {
+  background: #F2EDE9;
+  text-decoration: none;
+}
+
+.site-header__link--button {
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .page-main {
@@ -57,14 +83,18 @@ a:hover {
 
 .page-title {
   text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.75rem;
   color: #8B7969;
   margin: 0 0 32px;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .form-card {
   background: #fff;
+  padding: 32px 28px;
+  border: 1px solid #E0DFDE;
+  border-radius: 4px;
 }
 
 .form-row {
@@ -79,6 +109,7 @@ a:hover {
   flex-shrink: 0;
   padding-top: 10px;
   font-weight: bold;
+  color: #8B7969;
 }
 
 .form-label--required::after {
@@ -195,10 +226,10 @@ a:hover {
 
 .confirm-table th {
   width: 30%;
-  background: #F4F4F4;
+  background: #F2EDE9;
   text-align: left;
   font-weight: bold;
-  color: #333;
+  color: #8B7969;
 }
 
 .confirm-table td {
@@ -247,7 +278,7 @@ a:hover {
   gap: 12px 16px;
   align-items: flex-end;
   padding: 16px;
-  background: #F4F4F4;
+  background: #F2EDE9;
   border: 1px solid #E0DFDE;
   border-radius: 4px;
   flex: 1;
@@ -288,7 +319,7 @@ a:hover {
 }
 
 .admin-table tbody tr:hover {
-  background: #F4F4F4;
+  background: #F2EDE9;
 }
 
 .admin-table .btn-detail {
@@ -334,7 +365,7 @@ a:hover {
 }
 
 .pagination a:hover {
-  background: #F4F4F4;
+  background: #F2EDE9;
   text-decoration: none;
 }
 
@@ -343,24 +374,13 @@ a:hover {
   margin: 0;
 }
 
-.header-logout button {
-  background: none;
-  border: none;
-  color: #fff;
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  padding: 0;
-  font-family: inherit;
-}
-
-.header-logout button:hover {
-  text-decoration: underline;
-}
-
 .auth-form {
   max-width: 480px;
   margin: 0 auto;
+  background: #fff;
+  padding: 32px 28px;
+  border: 1px solid #E0DFDE;
+  border-radius: 4px;
 }
 
 .auth-form .form-row {
@@ -412,7 +432,7 @@ nav .pagination li.active span {
 }
 
 nav .pagination li a:hover {
-  background: #F4F4F4;
+  background: #F2EDE9;
   text-decoration: none;
 }
 

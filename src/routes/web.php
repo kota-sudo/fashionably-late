@@ -10,8 +10,8 @@ Route::post('/confirm', [ContactController::class, 'confirm']);
 Route::post('/contacts', [ContactController::class, 'store']);
 Route::get('/thanks', [ContactController::class, 'thanks']);
 
-Route::get('/register', [AuthController::class, 'register'])->middleware('guest');
-Route::get('/login', [AuthController::class, 'login'])->middleware('guest');
+Route::get('/register', [AuthController::class, 'register'])->middleware('guest')->name('register');
+Route::get('/login', [AuthController::class, 'login'])->middleware('guest')->name('login');
 
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [AdminController::class, 'index']);

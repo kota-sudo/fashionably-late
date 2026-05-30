@@ -1,4 +1,4 @@
-@extends('layouts.app', ['showHeader' => true, 'headerLink' => 'logout'])
+@extends('layouts.app', ['headerLink' => 'logout'])
 
 @section('title', '管理画面')
 

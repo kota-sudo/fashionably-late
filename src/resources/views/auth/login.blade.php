@@ -1,4 +1,4 @@
-@extends('layouts.app', ['showHeader' => true, 'headerLink' => $headerLink ?? 'register', 'headerLinkUrl' => $headerLinkUrl ?? '/register'])
+@extends('layouts.app', ['headerLink' => 'register'])
 
 @section('title', 'ログイン')
 

@@ -7,23 +7,23 @@
     <link rel="stylesheet" href="{{ asset('css/common.css') }}">
 </head>
 <body>
-    @if(!empty($showHeader))
-    <header class="page-header">
-        <h1 class="page-header__title">FashionablyLate</h1>
-        <div class="page-header__link">
-            @if(isset($headerLink) && $headerLink === 'login')
-                <a href="{{ $headerLinkUrl ?? '/login' }}">login</a>
-            @elseif(isset($headerLink) && $headerLink === 'register')
-                <a href="{{ $headerLinkUrl ?? '/register' }}">register</a>
-            @elseif(isset($headerLink) && $headerLink === 'logout')
+    <header class="site-header">
+        <h1 class="site-header__logo">FashionablyLate</h1>
+        @if(!empty($headerLink))
+        <div class="site-header__nav">
+            @if($headerLink === 'login')
+                <a href="{{ $headerLinkUrl ?? '/login' }}" class="site-header__link">login</a>
+            @elseif($headerLink === 'register')
+                <a href="{{ $headerLinkUrl ?? '/register' }}" class="site-header__link">register</a>
+            @elseif($headerLink === 'logout')
                 <form class="header-logout" action="/logout" method="POST">
                     @csrf
-                    <button type="submit">logout</button>
+                    <button type="submit" class="site-header__link site-header__link--button">logout</button>
                 </form>
             @endif
         </div>
+        @endif
     </header>
-    @endif
     <main class="page-main">
         @yield('content')
     </main>

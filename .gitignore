@@ -1,9 +1,11 @@
-/src/vendor
-/src/node_modules
+.write-staging/
 /src/.env
+/src/vendor/
+/src/node_modules/
 /src/storage/*.key
 /src/storage/logs/*
 /src/bootstrap/cache/*.php
+/src/.phpunit.result.cache
 
 mysql-data
 .env
