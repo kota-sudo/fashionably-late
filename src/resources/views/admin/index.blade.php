@@ -28,42 +28,47 @@
         <a href="/reset" class="btn btn--sub btn--compact">リセット</a>
     </form>
 
-    <div class="admin-export">
-        <form action="/export" method="GET">
-            @if(request('keyword'))
-                <input type="hidden" name="keyword" value="{{ request('keyword') }}">
-            @endif
-            @if(request('gender'))
-                <input type="hidden" name="gender" value="{{ request('gender') }}">
-            @endif
-            @if(request('category_id'))
-                <input type="hidden" name="category_id" value="{{ request('category_id') }}">
-            @endif
-            @if(request('date'))
-                <input type="hidden" name="date" value="{{ request('date') }}">
-            @endif
-            <button type="submit" class="btn btn--outline btn--compact">エクスポート</button>
-        </form>
+    <div class="admin-toolbar">
+        <div class="admin-export">
+            <form action="/export" method="GET">
+                @if(request('keyword'))
+                    <input type="hidden" name="keyword" value="{{ request('keyword') }}">
+                @endif
+                @if(request('gender'))
+                    <input type="hidden" name="gender" value="{{ request('gender') }}">
+                @endif
+                @if(request('category_id'))
+                    <input type="hidden" name="category_id" value="{{ request('category_id') }}">
+                @endif
+                @if(request('date'))
+                    <input type="hidden" name="date" value="{{ request('date') }}">
+                @endif
+                <button type="submit" class="btn btn--outline btn--compact">エクスポート</button>
+            </form>
+        </div>
+        <div class="pagination-wrap pagination-wrap--top">
+            {{ $contacts->appends(request()->query())->links() }}
+        </div>
     </div>
 
     <table class="admin-table">
         <thead>
             <tr>
-                <th>お名前</th>
-                <th>性別</th>
-                <th>メールアドレス</th>
-                <th>お問い合わせ内容</th>
-                <th></th>
+                <th class="admin-table__col-name">お名前</th>
+                <th class="admin-table__col-gender">性別</th>
+                <th class="admin-table__col-email">メールアドレス</th>
+                <th class="admin-table__col-category">お問い合わせの種類</th>
+                <th class="admin-table__col-action"></th>
             </tr>
         </thead>
         <tbody>
             @foreach($contacts as $contact)
             <tr>
-                <td>{{ $contact->last_name }} {{ $contact->first_name }}</td>
-                <td>{{ $contact->gender_label }}</td>
-                <td>{{ $contact->email }}</td>
-                <td>{{ $contact->detail }}</td>
-                <td>
+                <td class="admin-table__col-name">{{ $contact->last_name }} {{ $contact->first_name }}</td>
+                <td class="admin-table__col-gender">{{ $contact->gender_label }}</td>
+                <td class="admin-table__col-email">{{ $contact->email }}</td>
+                <td class="admin-table__col-category">{{ $contact->category->content ?? '' }}</td>
+                <td class="admin-table__col-action">
                     <button type="button" class="btn-detail"
                         data-id="{{ $contact->id }}"
                         data-name="{{ e($contact->last_name . " " . $contact->first_name) }}"
@@ -71,8 +76,8 @@
                         data-email="{{ $contact->email }}"
                         data-tel="{{ $contact->tel }}"
                         data-address="{{ $contact->address }}"
-                        data-building="{{ e($contact->building ?? '') }}"
-                        data-category="{{ e($contact->category->content ?? '') }}"
+                        data-building="{{ e($contact->building ?? '' ) }}"
+                        data-category="{{ e($contact->category->content ?? '' ) }}"
                         data-detail="{{ e($contact->detail) }}">
                         詳細
                     </button>
@@ -81,50 +86,46 @@
             @endforeach
         </tbody>
     </table>
-
-    <div class="pagination-wrap">
-        {{ $contacts->appends(request()->query())->links() }}
-    </div>
 </div>
 
 <div class="modal" id="contactModal" aria-hidden="true">
     <div class="modal__overlay" id="modalOverlay"></div>
     <div class="modal__content">
         <button type="button" class="modal__close" id="modalClose" aria-label="閉じる">&times;</button>
-        <table class="modal-table">
-            <tr>
-                <th>お名前</th>
-                <td id="modalName"></td>
-            </tr>
-            <tr>
-                <th>性別</th>
-                <td id="modalGender"></td>
-            </tr>
-            <tr>
-                <th>メールアドレス</th>
-                <td id="modalEmail"></td>
-            </tr>
-            <tr>
-                <th>電話番号</th>
-                <td id="modalTel"></td>
-            </tr>
-            <tr>
-                <th>住所</th>
-                <td id="modalAddress"></td>
-            </tr>
-            <tr>
-                <th>建物名</th>
-                <td id="modalBuilding"></td>
-            </tr>
-            <tr>
-                <th>お問い合わせの種類</th>
-                <td id="modalCategory"></td>
-            </tr>
-            <tr>
-                <th>お問い合わせ内容</th>
-                <td id="modalDetail"></td>
-            </tr>
-        </table>
+        <div class="modal-detail">
+            <div class="modal-detail__row">
+                <span class="modal-detail__label">お名前</span>
+                <span class="modal-detail__value" id="modalName"></span>
+            </div>
+            <div class="modal-detail__row">
+                <span class="modal-detail__label">性別</span>
+                <span class="modal-detail__value" id="modalGender"></span>
+            </div>
+            <div class="modal-detail__row">
+                <span class="modal-detail__label">メールアドレス</span>
+                <span class="modal-detail__value" id="modalEmail"></span>
+            </div>
+            <div class="modal-detail__row">
+                <span class="modal-detail__label">電話番号</span>
+                <span class="modal-detail__value" id="modalTel"></span>
+            </div>
+            <div class="modal-detail__row">
+                <span class="modal-detail__label">住所</span>
+                <span class="modal-detail__value" id="modalAddress"></span>
+            </div>
+            <div class="modal-detail__row">
+                <span class="modal-detail__label">建物名</span>
+                <span class="modal-detail__value" id="modalBuilding"></span>
+            </div>
+            <div class="modal-detail__row">
+                <span class="modal-detail__label">お問い合わせの種類</span>
+                <span class="modal-detail__value" id="modalCategory"></span>
+            </div>
+            <div class="modal-detail__row">
+                <span class="modal-detail__label">お問い合わせ内容</span>
+                <span class="modal-detail__value" id="modalDetail"></span>
+            </div>
+        </div>
         <form action="/delete" method="POST" class="modal__delete-form">
             @csrf
             <input type="hidden" name="id" id="modalDeleteId" value="">

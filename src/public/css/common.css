@@ -597,3 +597,269 @@ nav .pagination li a:hover {
   color: #fff;
   border-color: #BEB1A6;
 }
+
+.container--auth {
+  max-width: 520px;
+  min-width: auto;
+}
+
+.auth-form {
+  max-width: 100%;
+  padding: 40px 48px 48px;
+  border: none;
+  box-shadow: none;
+}
+
+.auth-form .form-row {
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.auth-form .form-row:last-of-type {
+  margin-bottom: 0;
+}
+
+.auth-form .form-label {
+  width: 100%;
+  padding-top: 0;
+  margin-bottom: 0;
+  font-weight: bold;
+  color: #8B7969;
+}
+
+.auth-form .form-field {
+  width: 100%;
+}
+
+.auth-form .form-input {
+  max-width: 100%;
+  background: #F4F4F4;
+  border: 1px solid #E0DFDE;
+}
+
+.auth-form .form-input::placeholder {
+  color: #B0B0B0;
+}
+
+.auth-form .form-actions {
+  margin-top: 40px;
+}
+
+.container--auth .page-title {
+  margin-bottom: 40px;
+}
+
+.container--admin .admin-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+.container--admin .admin-export {
+  margin-bottom: 0;
+}
+
+.container--admin .pagination-wrap--top {
+  margin-top: 0;
+}
+
+.container--admin .pagination-wrap--top nav .pagination {
+  margin-top: 0;
+  justify-content: flex-end;
+}
+
+.admin-table__col-name {
+  width: 14%;
+  white-space: nowrap;
+}
+
+.admin-table__col-gender {
+  width: 8%;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.admin-table__col-email {
+  width: 26%;
+}
+
+.admin-table__col-category {
+  width: 38%;
+}
+
+.admin-table__col-action {
+  width: 14%;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.admin-table thead .admin-table__col-gender {
+  text-align: center;
+}
+
+.admin-table tbody td {
+  background: #fff;
+  vertical-align: middle;
+}
+
+.admin-table tbody td.admin-table__col-gender {
+  text-align: center;
+}
+
+.modal__content {
+  padding: 48px 56px 40px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+}
+
+.modal-detail {
+  margin-bottom: 40px;
+}
+
+.modal-detail__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  padding: 18px 0;
+}
+
+.modal-detail__label {
+  width: 160px;
+  flex-shrink: 0;
+  color: #8B7969;
+  font-weight: bold;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.modal-detail__value {
+  flex: 1;
+  color: #8B7969;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.modal__delete-form {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.btn--delete {
+  background: #8B7969;
+  min-width: 120px;
+}
+
+.form-card .form-input,
+.form-card .form-select,
+.form-card .form-textarea {
+  max-width: 100%;
+  border: none;
+  background: #F4F4F4;
+  border-radius: 0;
+  padding: 12px 14px;
+}
+
+.form-card .form-input::placeholder,
+.form-card .form-textarea::placeholder {
+  color: #B0B0B0;
+}
+
+.form-name-fields {
+  display: flex;
+  gap: 16px;
+  max-width: 100%;
+}
+
+.form-name-fields .form-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.form-tel-fields {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-card .form-input--short {
+  max-width: 100px;
+  width: 100px;
+  flex-shrink: 0;
+}
+
+.form-card .form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2712%27 height=%278%27 viewBox=%270 0 12 8%27%3E%3Cpath fill=%27%238B7969%27 d=%27M1 1l5 5 5-5%27/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+
+.form-card .form-radio-group {
+  padding-top: 12px;
+}
+
+.form-card .form-radio-group input[type="radio"] {
+  accent-color: #8B7969;
+}
+
+.form-card {
+  border: none;
+  padding: 40px 48px;
+}
+
+.container--admin .pagination-wrap--top nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container--admin .pagination-wrap--top .pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container--admin .pagination-wrap--top .pagination li {
+  display: inline-flex;
+}
+
+.container--admin .pagination-wrap--top .pagination li a,
+.container--admin .pagination-wrap--top .pagination li span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 10px;
+  border: 1px solid #E0DFDE;
+  color: #8B7969;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.container--admin .pagination-wrap--top .pagination li.active span {
+  background: #8B7969;
+  color: #fff;
+  border-color: #8B7969;
+}
+
+.container--admin .pagination-wrap--top .pagination li.disabled span {
+  color: #ccc;
+  border-color: #E0DFDE;
+}
+
+.container--admin .pagination-wrap--top .pagination li a:hover {
+  background: #F2EDE9;
+  text-decoration: none;
+}
