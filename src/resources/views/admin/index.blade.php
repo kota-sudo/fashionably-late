@@ -52,7 +52,7 @@
                 <th>お名前</th>
                 <th>性別</th>
                 <th>メールアドレス</th>
-                <th>お問い合わせの種類</th>
+                <th>お問い合わせ内容</th>
                 <th></th>
             </tr>
         </thead>
@@ -62,7 +62,7 @@
                 <td>{{ $contact->last_name }} {{ $contact->first_name }}</td>
                 <td>{{ $contact->gender_label }}</td>
                 <td>{{ $contact->email }}</td>
-                <td>{{ $contact->category->content ?? '' }}</td>
+                <td>{{ $contact->detail }}</td>
                 <td>
                     <button type="button" class="btn-detail"
                         data-id="{{ $contact->id }}"
